@@ -19,8 +19,18 @@ const Feed = ({ category, setProgress }) => {
     try {
       const videolist_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${API_KEY}`;
       const response = await fetch(videolist_url);
+      //cheack api response
+
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        if (response.status === 404) {
+          throw new Error("Not found - 404");
+        } else if (response.status >= 400 && response.status < 500) {
+          throw new Error("Client error - " + response.status);
+        } else if (response.status >= 500 && response.status < 600) {
+          throw new Error("Server error - " + response.status);
+        } else {
+          throw new Error(`HTTP Error: ${response.status}`);
+        }
       }
       setProgress(50);
       const resData = await response.json();
@@ -41,6 +51,13 @@ const Feed = ({ category, setProgress }) => {
     fetchData();
   }, [category]);
 
+  //
+  // Scrolls to the top of the page when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  //
   return (
     <div className="feed">
       {error && <div>{error}</div>}

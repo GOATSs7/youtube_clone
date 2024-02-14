@@ -34,7 +34,7 @@
 @media (max-width: 900px) {
   .loader {
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 45%;
+    left: 40%;
   }
 }

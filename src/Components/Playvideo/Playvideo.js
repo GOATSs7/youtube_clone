@@ -61,6 +61,9 @@ const Playvideo = ({ setProgress }) => {
   //for videodata
   useEffect(() => {
     fetchVideoDta();
+
+    //for goseto  top from anywhere when we open new video
+    window.scrollTo(0, 0);
   }, [videoId]);
 
   //for channel data
