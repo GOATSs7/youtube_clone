@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/GOATSs7/youtube_clone/static/css/main.9561e0d9.css",
+    "main.js": "/GOATSs7/youtube_clone/static/js/main.5d19fa14.js",
+    "static/js/592.e6a22888.chunk.js": "/GOATSs7/youtube_clone/static/js/592.e6a22888.chunk.js",
+    "static/media/cameron.png": "/GOATSs7/youtube_clone/static/media/cameron.cedb1ba5832f609542da.png",
+    "static/media/tom.png": "/GOATSs7/youtube_clone/static/media/tom.df63bfcb6f1c8f5d7137.png",
+    "static/media/jack.png": "/GOATSs7/youtube_clone/static/media/jack.3a2249a07dd80a9c36a4.png",
+    "static/media/megan.png": "/GOATSs7/youtube_clone/static/media/megan.d9c678d896bed0b8c031.png",
+    "static/media/simon.png": "/GOATSs7/youtube_clone/static/media/simon.a92c2df263101574e364.png",
+    "index.html": "/GOATSs7/youtube_clone/index.html",
+    "main.9561e0d9.css.map": "/GOATSs7/youtube_clone/static/css/main.9561e0d9.css.map",
+    "main.5d19fa14.js.map": "/GOATSs7/youtube_clone/static/js/main.5d19fa14.js.map",
+    "592.e6a22888.chunk.js.map": "/GOATSs7/youtube_clone/static/js/592.e6a22888.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9561e0d9.css",
+    "static/js/main.5d19fa14.js"
+  ]
+}
