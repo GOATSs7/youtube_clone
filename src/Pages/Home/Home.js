@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Feed from "../../Components/Feed/Feed";
-const Home = ({ sidebar }) => {
+const Home = ({ sidebar, setProgress }) => {
   const [category, setCategory] = useState(0);
 
   return (
@@ -13,7 +13,7 @@ const Home = ({ sidebar }) => {
         setCategory={setCategory}
       />
       <div className={`container ${sidebar ? "" : "large-container"}`}>
-        <Feed category={category} />
+        <Feed category={category} setProgress={setProgress} />
       </div>
     </>
   );

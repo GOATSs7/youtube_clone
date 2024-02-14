@@ -12,7 +12,7 @@ import moment from "moment";
 import { useParams } from "react-router-dom";
 //
 
-const Playvideo = () => {
+const Playvideo = ({ setProgress }) => {
   //state
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
@@ -22,10 +22,23 @@ const Playvideo = () => {
 
   //fetch videodata func
   const fetchVideoDta = async () => {
-    const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
-    await fetch(videoDetails_url)
-      .then((res) => res.json())
-      .then((data) => setApiData(data.items[0]));
+    setProgress(30);
+
+    try {
+      const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
+      const response = await fetch(videoDetails_url);
+      if (!response.ok) {
+        throw new Error("Error in Data fetching");
+      } else {
+        const data = await response.json();
+        setApiData(data.items[0]);
+        setProgress(66);
+      }
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setProgress(100);
+    }
   };
 
   const fetchOtherData = async () => {

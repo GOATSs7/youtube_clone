@@ -13,6 +13,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #000;
+
   margin: 5px 0;
 }
 .card h3 {
@@ -23,4 +24,10 @@
 }
 .card p {
   font-size: 14px;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
