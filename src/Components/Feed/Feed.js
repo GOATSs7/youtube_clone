@@ -41,34 +41,6 @@ const Feed = ({ category, setProgress }) => {
     fetchData();
   }, [category]);
 
-  // return (
-  //   <div className="feed">
-  //     {error && <div>{error} </div>}
-
-  //     {isLoading ? (
-  //       <div>...Loading</div>
-  //     ) : (
-  //       data.map((item, index) => {
-  //         return (
-  //           <Link
-  //             to={`video/${item.snippet.categoryId}/${item.id}`}
-  //             className="card"
-  //             key={item.index}
-  //           >
-  //             <img src={item.snippet.thumbnails.medium.url} alt="" />
-  //             <h2>{item.snippet.title}</h2>
-  //             <h3>{item.snippet.channelTitle}</h3>
-  //             <p>
-  //               {value_converter(item.statistics.viewCount)} Views &bull;{" "}
-  //               {moment(item.snippet.publishedAt).fromNow()}
-  //             </p>
-  //           </Link>
-  //         );
-  //       })
-  //     )}
-  //   </div>
-  // );
-
   return (
     <div className="feed">
       {error && <div>{error}</div>}
